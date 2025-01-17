@@ -1,22 +1,19 @@
-
 import 'package:flutter/material.dart';
+import 'package:uber_app/features/onboarding/onboarding_screen.dart';
+import 'package:uber_app/features/onboarding/splash_screen.dart';
+
+import '../../features/home/ui/home_screen.dart';
 
 class AppPages {
-  static const onboarding = '/';
-  static const register = '/register';
-  static const login = '/login';
-  static const loadingPage = '/loadingPage';
+  static const splash = '/';
+  static const onboarding = '/onBoarding';
+  static const chatScreen = '/ChatScreen';
   static const home = '/home';
-  static const profile = '/profile';
-  static const addTask = '/addTask';
-  static const chatDetails = '/chatDetails';
+  
 }
 
 Map<String, Widget Function(BuildContext)> routes = {
-  // AppPages.onboarding: (context) => const OnboardingScreen(),
-  // AppPages.login: (context) => const LoginScreen(),
-  // AppPages.register: (context) => const RegisterScreen(),
-  // AppPages.home: (context) => const HomeScreen(),
-  // AppPages.chatDetails: (context) => const ChatDetailsScreen(),
-  // AppPages.profile: (context) => const ProfileScreen(),
+  AppPages.splash: (context) => const SplashScreen(),
+  AppPages.onboarding: (context) => const OnboardingScreen(),
+  AppPages.chatScreen: (context) => const ChatScreen(),
 };

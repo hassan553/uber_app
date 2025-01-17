@@ -8,8 +8,8 @@ class AppColors {
     Color(0xff0B57CF),
     Color(0xff062C69),
   ];
-  static const Color primaryColor = Color(0xff5F33E1);
-  static Color lightPrimaryColor = const Color(0xffB3CBF0).withOpacity(0.15);
+  static const Color primaryColor = Color(0xff0690c1);
+  static Color lightPrimaryColor = const Color(0xff55cee3);
   static const Color whiteColor = Color(0xffFFFFFF);
   static const Color blackColor = Color(0xff00070D);
   static const Color offWhite = Color(0xffF3FAFA);

@@ -319,12 +319,6 @@ extension on DioHelper {
               message: "sorry! your recieve request has timed out!");
         case DioExceptionType.badResponse:
           if (e.response!.data['statusCode'] == 401) {
-            CashHelper.sharedPreferences?.clear();
-            getIt<NavigationService>()
-                .navigatorKey
-                .currentContext!
-                .navigateToAndReplacement(AppPages.login);
-
             throw PrimaryServerException(
                 code: 401,
                 error: e.toString(),
