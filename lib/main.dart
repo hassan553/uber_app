@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:uber_app/core/routes/app_pages.dart';
+import 'package:get/get.dart';
+import 'package:uber_app/core/services/cache/cash_helper.dart';
+import 'package:uber_app/core/services/firebase/awesome_notifications_helper.dart';
+import 'package:uber_app/core/services/firebase/fcm_helper.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FcmHelper.initFcm();
+  await AwesomeNotificationsHelper.init();
+  await CashHelper.init();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -9,9 +21,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
-      home:Scaffold(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppPages.splash,
+      routes: routes,
     );
   }
 }
