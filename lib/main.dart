@@ -8,16 +8,11 @@ import 'package:uber_app/core/services/firebase/fcm_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await FcmHelper.initFcm();
-
   await AwesomeNotificationsHelper.init();
-
   await CashHelper.init();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -28,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       initialRoute: AppPages.splash,
       routes: routes,
     );
